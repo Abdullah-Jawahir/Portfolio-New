@@ -1,18 +1,73 @@
+@import './reset';
+
+$text-gray: rgb(77, 77, 77);
+$border-gray: #a3a3a3;
+
+@mixin cardShadow {
+    box-shadow: 4px 4px 7px 3px rgba(0, 0, 0, 0.15),
+    -4px -4px 7px 3px #fff
+    ;
+}
+
+@mixin afterClickShadow {
+    box-shadow: inset 3px 3px 3px 1px rgba(0, 0, 0, 0.15),
+    inset -3px -3px 3px 1px #fff
+    ;
+}
+
+@mixin beforeClickShadow {
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.15),
+    -3px -3px 4px 1px #fff
+    ;
+}
+
+@mixin mQ($width) {
+    @media screen and (max-width: $width){
+        @content;
+    }
+}
+
+@import './header';
+@import './footer';
+
 #projects {
 
     flex-direction: column;
     padding: 6em;
     background-color: aliceblue;
 
+    .btn {
+
+        background-color: transparent;
+        // border: 1px solid $border-gray;
+        border: none;
+        outline: none;
+        width: 120px;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 30px;
+        font-weight: 550;
+        cursor: pointer;
+        transition: .3s;
+        @include beforeClickShadow;
+
+        &:active {
+
+            @include afterClickShadow;
+        }
+    }
+
     .projects-container {
 
         display: flex;
-        // grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        // display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
         gap: 30px;
-        // border: 2px solid;
         flex-wrap: wrap;
         width: 100%;
-        // flex-direction: column;
+        max-height: 2180px;
+        overflow-y: hidden;
+        padding: 10px;
 
 
         .project-card {
@@ -25,6 +80,7 @@
             padding: 30px 40px;
             @include cardShadow;
             border-radius: 30px;
+            // flex: 1;
 
             .pic-wrapper {
 
@@ -56,6 +112,7 @@
                 margin-bottom: 20px;
                 font-size: 1.8rem;
                 font-weight: 550;
+                text-align: center;
             }
 
             .proj-btns {
@@ -66,33 +123,6 @@
                 justify-content: space-around;
                 padding: 0 40px;
                 flex-wrap: wrap;
-
-                a {
-
-                    background-color: transparent;
-                    // border: 1px solid $border-gray;
-                    border: none;
-                    outline: none;
-                    width: 120px;
-                    text-align: center;
-                    padding: 10px 0;
-                    border-radius: 30px;
-                    font-weight: 550;
-                    cursor: pointer;
-                    transition: .3s;
-                    @include beforeClickShadow;
-
-                    // &:hover {
-
-                    //     // background-color: #333;
-                    //     // color: #fff;
-                    // }
-
-                    &:active {
-
-                        @include afterClickShadow;
-                    }
-                }
             }
 
             &:first-child, &:nth-child(2) {
@@ -103,6 +133,15 @@
 
 
         }
+    }
+
+    .more-projects-btn {
+
+        margin-top: 50px;
+        padding: 20px;
+        width: 250px;
+        font-size: 1rem;
+        letter-spacing: 2px;
     }
 }
 
