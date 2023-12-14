@@ -10,4 +10,7 @@ header nav a.active {
 #projects .projects-container {
   max-height: -moz-max-content;
   max-height: max-content;
+  display: flex;
+  font-weight: wrap;
+  place-content: center;
 }

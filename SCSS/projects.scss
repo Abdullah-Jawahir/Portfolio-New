@@ -59,11 +59,11 @@ $border-gray: #a3a3a3;
 
     .projects-container {
 
-        display: flex;
-        // display: grid;
-        // grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        // display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 30px;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
         width: 100%;
         max-height: 2180px;
         overflow-y: hidden;
@@ -75,11 +75,12 @@ $border-gray: #a3a3a3;
             // border: 1px solid red;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: space-around;
             align-items: center;
             padding: 30px 40px;
             @include cardShadow;
             border-radius: 30px;
+            // height: auto;
             // flex: 1;
 
             .pic-wrapper {
@@ -101,7 +102,7 @@ $border-gray: #a3a3a3;
                 img {
 
                     width: 100%;
-                    height: auto;
+                    // height: 100%;
                     object-fit: cover;
                 }
 

@@ -21,6 +21,9 @@ header {
     .projects-container {
 
         max-height: max-content;
+        display: flex;
+        font-weight: wrap;
+        place-content: center;
     }
 }
 
