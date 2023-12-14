@@ -63,7 +63,7 @@ $border-gray: #a3a3a3;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 30px;
-        // flex-wrap: wrap;
+        flex-wrap: wrap;
         width: 100%;
         max-height: 2180px;
         overflow-y: hidden;
